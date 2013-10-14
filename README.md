@@ -1,0 +1,1 @@
+### Responsive AssetPack example to practice AWS Deployment
