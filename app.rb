@@ -9,7 +9,6 @@ class App < Sinatra::Base
   set :app_file, __FILE__
   set :root, File.dirname(__FILE__) # you have to set app root
   set :views, "views"
-  set :public_dir, 'static'
   # set :public_dir, "static" # if you had a folder other than 'public'
 
   register Sinatra::AssetPack
