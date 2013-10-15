@@ -57,6 +57,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-script
   compass
+  execjs
   sass
   sinatra
   sinatra-assetpack
