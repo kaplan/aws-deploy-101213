@@ -1,3 +1,5 @@
+require 'rubygems'
+
 require 'sinatra/base'
 require "sinatra/reloader"
 require 'sinatra/assetpack'
