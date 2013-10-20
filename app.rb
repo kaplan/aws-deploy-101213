@@ -6,7 +6,7 @@ require "sinatra/reloader"
 require 'sinatra/assetpack'
 require 'sass'
 require 'coffee-script'
-require 'github_hook'
+require './github_hook'
 
 class App < Sinatra::Base
   use GithubHook
