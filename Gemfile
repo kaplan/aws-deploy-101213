@@ -10,7 +10,8 @@ gem 'sass'
 
 
 group :development do
-  gem 'thin'
+  gem "thin", "~> 1.5.1"
+  # gem 'thin'
 end
 
 group :production do

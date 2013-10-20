@@ -5,9 +5,12 @@ require 'sinatra/base'
 require "sinatra/reloader"
 require 'sinatra/assetpack'
 require 'sass'
-# require 'coffee-script'
+require 'coffee-script'
+require 'github_hook'
 
 class App < Sinatra::Base
+  use GithubHook
+
   # Set sinatra's variables
   set :app_file, __FILE__
   set :root, File.dirname(__FILE__) # you have to set app root
@@ -32,9 +35,9 @@ class App < Sinatra::Base
     # The 2nd parameter defines where the compressed version will be served.
     # Note: that 2nd param is optional, AssetPack will figure it out.
 
-    js :app, 'js/app.js', [
-      'js/vendor/**/*.js',
-      'js/ilb/**/*.js'
+    js :app, '/js/app.js', [
+      '/js/vendor/**/*.js',
+      '/js/ilb/**/*.js'
     ]
 
     css :application, '/css/application.css', [
