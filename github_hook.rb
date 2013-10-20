@@ -15,7 +15,7 @@ class GithubHook < Sinatra::Base
   end
 
   set(:autopull) { production? }
-  parse_git
+  # parse_git
 
   before do
     cache_control :public, :must_revalidate
