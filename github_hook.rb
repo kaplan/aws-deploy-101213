@@ -10,7 +10,7 @@ class GithubHook < Sinatra::Base
     if :commit_date.nil?
       puts 'nil'
     else
-      set :commit_date, Time.parse(date)
+      set :commit_date, Time.parse(date).to_s
     end
   end
 
