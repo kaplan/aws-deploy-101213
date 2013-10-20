@@ -21,8 +21,10 @@ class GithubHook < Sinatra::Base
 
   before do
     cache_control :public, :must_revalidate
-    etag settings.commit_hash
-    last_modified settings.commit_date
+    if settings.commit_hash != nil
+      etag settings.commit_hash
+      last_modified settings.commit_date
+    end
   end
 
   # this is where the server should pull when GitHub gets an update.
