@@ -6,7 +6,12 @@ class GithubHook < Sinatra::Base
     # Parse hash and date from the git log command.
     sha1, date = `git log HEAD~1..HEAD --pretty=format:%h^%ci`.strip.split('^')
     set :commit_hash, sha1
-    set :commit_date, Time.parse(date).to_s unless :commit_date.nil?
+    # set :commit_date, Time.parse(date)
+    if :commit_date.nil?
+      puts 'nil'
+    else
+      set :commit_date, Time.parse(date)
+    end
   end
 
   set(:autopull) { production? }
