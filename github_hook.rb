@@ -7,19 +7,16 @@ class GithubHook < Sinatra::Base
     sha1, date ||= `git log HEAD~1..HEAD --pretty=format:%h^%ci`.strip.split('^')
     # set :commit_hash, sha1
     # set :commit_date, Time.parse(date)
-
     if :commit_hash.nil?
       puts 'nil'
     else
       set :commit_hash, sha1
     end
-
     if :commit_date.nil?
       puts 'nil'
     else
       set :commit_date, Time.parse(date).to_s
     end
-
   end
 
   set(:autopull) { production? }
