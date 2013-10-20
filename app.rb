@@ -1,5 +1,7 @@
 require 'rubygems'
 require 'sinatra'
+require 'ostruct'
+require 'time'
 
 require 'sinatra/base'
 require "sinatra/reloader"
