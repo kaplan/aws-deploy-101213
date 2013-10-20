@@ -21,7 +21,7 @@ class GithubHook < Sinatra::Base
 
   before do
     cache_control :public, :must_revalidate
-    if settings.commit_hash != nil
+    if settings.commit_hash != undefined
       etag settings.commit_hash
       last_modified settings.commit_date
     end
