@@ -1,17 +1,13 @@
 require 'rubygems'
 require 'sinatra'
-require 'ostruct'
-require 'time'
 
 require 'sinatra/base'
 require "sinatra/reloader"
 require 'sinatra/assetpack'
 require 'sass'
 require 'coffee-script'
-require './github_hook'
 
 class App < Sinatra::Base
-  use GithubHook
 
   # Set sinatra's variables
   set :app_file, __FILE__
