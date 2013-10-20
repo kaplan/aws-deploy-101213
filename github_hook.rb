@@ -23,6 +23,7 @@ class GithubHook < Sinatra::Base
 
   end
 
+
   set(:autopull) { production? }
   parse_git
 
